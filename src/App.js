@@ -1,8 +1,12 @@
-import React, { Fragment } from "react";
+import React from "react";
+import Footer from "./Components/Footer/Footer";
 import "./App.css";
 
 function App() {
-  return <h1> Big Four </h1>;
+  return (
+    <Footer />
+  )
+  
 }
 
 export default App;
