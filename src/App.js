@@ -10,8 +10,8 @@ function App() {
     <Fragment>
       <Header />
       <Footer />
-      {/* <h1> Big Four </h1>; */}
-    <Fragment />
+    </Fragment>
+
   );
 }
 
