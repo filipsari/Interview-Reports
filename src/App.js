@@ -6,11 +6,10 @@ import "./App.css";
 
 function App() {
   return (
-
     <Fragment>
       <Header />
       <Footer />
-    <Fragment />
+    </Fragment>
   );
 }
 
