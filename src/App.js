@@ -10,10 +10,10 @@ import "./App.css";
 function App() {
   return (
     <Fragment>
-
+      <Header />
       <Login />
 
-      <Header />
+      
       <Footer />
 
     </Fragment>

@@ -6,13 +6,13 @@ import "./Header.css"
 function Header() {
   return (
     <div className="mb-50">
-     <nav class="navbar navbar-dark bg-primary">
-  <div class="container-fluid">
-    <a class="navbar-brand">Interview Report</a>
-    <form class="d-flex">
-    <button class="btn" type="text">Candidates</button>
+     <nav className="navbar navbar-dark bg-primary">
+  <div className="container-fluid">
+    <a className="navbar-brand">Interview Report</a>
+    <form className="d-flex">
+    <button className="btn" type="text">Candidates</button>
     
-    <button class="btn" type="text"><i class="fas fa-sign-in-alt"></i> Login</button>
+    <button className="btn" type="text"><i className="fas fa-sign-in-alt"></i> Login</button>
     </form>
   </div>
 </nav>
