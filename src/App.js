@@ -1,20 +1,13 @@
-import React, {Fragment  } from 'react';
-import './App.css';
+import React, { Fragment } from "react";
+import { Login } from "./Pages/Login/Login";
 
-
-
-
-
-
-
-
-
+import "./App.css";
 
 function App() {
   return (
-
-
-    <h1> Big Four </h1>
+    <Fragment>
+      <Login />
+    </Fragment>
   );
 }
 
