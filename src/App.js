@@ -4,7 +4,8 @@ import { Route, Switch } from "react-router-dom";
 import { Login } from "./Pages/Login/Login";
 import { Header } from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
-import { SingleCandidateCard } from "./Components/SingleCandidateCard/SingleCandidateCard";
+import { SingleCandidate } from "./Pages/SingleCandidate/SingleCandidate";
+import { Candidates } from "./Pages/Candidates/Candidates";
 
 import "./App.css";
 
@@ -18,7 +19,8 @@ function App() {
       <Header isLoggedIn={isLoggedIn} />
       {isLoggedIn ? (
         <Switch>
-          <Route path="/single-candidate" component={SingleCandidateCard} />
+          <Route path="/single-candidate" component={SingleCandidate} />
+          <Route path="/candidates" component={Candidates} />
         </Switch>
       ) : (
         <Login onLogin={setIsLoggedIn} />
