@@ -1,4 +1,5 @@
 import React from "react";
+import { CandidateInfo } from "../../Components/SingleCandidateCard/CandidateInfo/CandidateInfo";
 // import {Avatar} from './Avatar/Avatar';
 // import {CandidateInfo} from './CandidateInfo/CandidateInfo';
 
@@ -10,6 +11,7 @@ export const SingleCandidate = () => {
         src="https://1.bp.blogspot.com/-nzm908Pfunw/VqXgeRNp4LI/AAAAAAAACJI/wgeVntLSIT8/w1200-h630-p-k-no-nu/status-report.png"
         alt=""
       />
+
       {/* <Avatar/>
     <CandidateInfo/> */}
     </div>

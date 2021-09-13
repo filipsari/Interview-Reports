@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom';
 
 import "./Header.css";
 
@@ -9,19 +10,18 @@ function Header({ isLoggedIn }) {
         <div className="container-fluid">
           <a className="navbar-brand">Interview Report</a>
 
-          {isLoggedIn ? (
-            <form className="d-flex">
-              <button className="btn" type="text">
+          {isLoggedIn && (
+            
+            <div className="d-flex">
+              <Link to="/candidates" className="btn" >
                 Candidates
-              </button>
+             </Link>
 
               <button className="btn" type="text" onClick={() => localStorage.removeItem('accessToken')}>
                 <i className="fas fa-sign-in-alt"></i> Log Out
               </button>
-            </form>
-          ) : (
-            <></>
-          )}
+            </div>
+          ) }
         </div>
       </nav>
     </div>
