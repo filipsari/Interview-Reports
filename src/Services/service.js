@@ -10,7 +10,8 @@ export const getCandidates = () => {
   .then( (results) => results.json())
   .then( (candidates) => {
     console.log(candidates);
-    return candidates.results
+    return candidates
+    
   })
 } 
 
