@@ -12,7 +12,7 @@ function Header({ isLoggedIn }) {
 
           {isLoggedIn && (
             
-            <div className="d-flex">
+            <form className="d-flex">
               <Link to="/candidates" className="btn" >
                 Candidates
              </Link>
@@ -20,7 +20,7 @@ function Header({ isLoggedIn }) {
               <button className="btn" type="text" onClick={() => localStorage.removeItem('accessToken')}>
                 <i className="fas fa-sign-in-alt"></i> Log Out
               </button>
-            </div>
+            </form>
           ) }
         </div>
       </nav>
