@@ -6,7 +6,6 @@ import { Header } from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
 import { SingleCandidate } from "./Pages/SingleCandidate/SingleCandidate";
 import { Candidates } from "./Pages/Candidates/Candidates";
-import { getCandidates } from "./Services/service";
 
 import "./App.css";
 
@@ -15,23 +14,13 @@ function App() {
     !!localStorage.getItem("accessToken")
   );
 
-  const [candidates, setCandidates] = useState([]);
-
-  useEffect(() => {
-    getCandidates().then((candidates) => {
-      console.log(candidates);
-      setCandidates(candidates);
-    });
-  }, []);
-
-
   return (
     <Fragment>
-      <Header isLoggedIn={isLoggedIn} />
+      <Header isLoggedIn={isLoggedIn} onLogout={setIsLoggedIn} />
       {isLoggedIn ? (
         <Switch>
           <Route path="/single-candidate" component={SingleCandidate} />
-          <Route path="/candidates" component={  () => <Candidates ourData={candidates}/>} />
+          <Route path="/" component={Candidates} />
         </Switch>
       ) : (
         <Login onLogin={setIsLoggedIn} />
