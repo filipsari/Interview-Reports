@@ -4,14 +4,14 @@ import { CandidateInfo } from "../../Components/SingleCandidateCard/CandidateInf
 import "./Candidates.css";
 
 export const Candidates = ({ourData}) => {
-  console.log(ourData);
 
-  return (
+
+  return ( 
     <div className="card-group">
       {ourData.map((element) => (
         <div className="card ourCard" style={{ width: "18rem" }}>
           <Link to="/single-candidate">
-            <img src={element.avatar} className="card-img-top" alt="..." />
+            <img src="https://image.shutterstock.com/image-vector/profile-photo-vector-placeholder-pic-600w-535853263.jpg" className="card-img-top" alt="..." />
              <CandidateInfo name={element.name} email={element.email}/>
           </Link>
         </div>
