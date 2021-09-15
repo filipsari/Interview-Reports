@@ -6,10 +6,11 @@ import {Container, Row, Col} from "react-bootstrap";
 import "./BasicInfo.css";
 
 
-export const BasicInfo = () => {
+export const BasicInfo = ({candidate}) => {
+
+ console.log(candidate);
 
   
-
   return ( 
   <Container>
   <Row className="mt-4">
@@ -23,19 +24,19 @@ export const BasicInfo = () => {
       <Row>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Name:</h6>
-          <p className="fs-4"> NAME </p>
+          <p className="fs-4"> {candidate.name} </p>
         </Col>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Date of Birth:</h6>
-          <p className="fs-4">SOME DATE</p>
+          <p className="fs-4">{candidate.birthday}</p>
         </Col>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Email:</h6>
-          <p className="fs-4">EMAIL</p>
+          <p className="fs-4">{candidate.email}</p>
         </Col>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Education:</h6>
-          <p className="fs-4">EDUCATION</p>
+          <p className="fs-4">{candidate.education}</p>
         </Col>
       </Row>
     </Col>
