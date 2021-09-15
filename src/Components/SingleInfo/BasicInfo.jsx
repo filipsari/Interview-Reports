@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React  from "react";
 import {Container, Row, Col} from "react-bootstrap";
 
-import {getCandidates} from "..//..//Services/service";
+
 
 import "./BasicInfo.css";
 

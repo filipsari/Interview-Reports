@@ -6,7 +6,7 @@ export const Login = ({onLogin}) => {
 
   const [email, setEmail] = useState ('');
   const [password, setPassword] = useState ('');
-  const [token, setToken] = useState(null);
+  // const [token, setToken] = useState(null);
 
   const login = (event) => {
     event.preventDefault();
