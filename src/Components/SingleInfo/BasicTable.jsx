@@ -12,7 +12,7 @@ export const BasicTable = ({candidate}) => {
 
   useEffect(() =>{
     getReports().then((reports) =>{
-      setReports(reports.filter(singleReport => singleReport.candidateId === candidate.id))
+      setReports(reports.filter( element => element.candidateId === candidate.id))
     });
   }, []);
 

@@ -11,9 +11,9 @@ import { getCandidates } from "../../Services/service";
 
 
 export const SingleCandidate = () => {
-    const [candidates, setCandidates] = useState([]);
+  const [candidates, setCandidates] = useState([]);
 
-  const candidateId = useParams().candidateId
+  const candidateId = useParams().candidateId // objekat key:vaule
 
 
 
