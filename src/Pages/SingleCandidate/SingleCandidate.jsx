@@ -12,9 +12,8 @@ import { getCandidates } from "../../Services/service";
 
 export const SingleCandidate = () => {
     const [candidates, setCandidates] = useState([]);
-    
-  const params = useParams();
-  const candidateId = params.candidateId
+
+  const candidateId = useParams().candidateId
 
 
 
@@ -33,8 +32,10 @@ export const SingleCandidate = () => {
 
   return (
     <Fragment>
+    
     { candidate ? <BasicInfo candidate={candidate}/> : null}  
-    <BasicTable/>
+    {candidate && <BasicTable candidate={candidate} /> }
+    
     </Fragment>    
   );
 };
