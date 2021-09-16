@@ -1,10 +1,32 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Table, Container } from "react-bootstrap";
 
+import { getReports } from "../../Services/service";
 
-export const BasicTable = () => {
+
+
+export const BasicTable = ({candidate}) => {
+
+  const [reports,setReports] =useState([]);
+
+
+  useEffect(() =>{
+    getReports().then((reports) =>{
+      setReports(reports.filter(singleReport => singleReport.candidateId === candidate.id))
+    });
+  }, []);
+
+  console.log(reports)
+
+  
+  
+  // if(parseInt(reports.candidateId) === candidate)
+
+
+
   return (
 <Container>
+
       <h3 className="mt-4 mb-3">Reports:</h3>
       <Table striped bordered hover>
         <thead>
@@ -15,32 +37,17 @@ export const BasicTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Google</td>
-            <td>20.12.2017</td>
-            <td>Passed</td>
+        {reports && reports.map((element, index) => (
+          <tr key={index}>
+            <td>{element.companyName}</td>
+            <td>{element.interviewDate}</td>
+            <td>{element.status}</td>
             <td><i class="fas fa-eye"></i></td>
           </tr>
-          <tr>
-            <td>Facebook</td>
-            <td>20.12.2017</td>
-            <td>Failed</td>
-            <td><i class="fas fa-eye"></i></td>
-          </tr>
-          <tr>
-            <td>Instagram</td>
-            <td>20.12.2017</td>
-            <td>Passed</td>
-            <td><i class="fas fa-eye"></i></td>
-          </tr>
-          <tr>
-            <td>LinkedLn</td>
-            <td>20.12.2017</td>
-            <td>Passed</td>
-            <td><i class="fas fa-eye"></i></td>
-          </tr>
+        ))}
         </tbody>
       </Table>
+      
     </Container>
   );
 };

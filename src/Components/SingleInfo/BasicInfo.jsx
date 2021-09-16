@@ -8,7 +8,7 @@ import "./BasicInfo.css";
 
 export const BasicInfo = ({candidate}) => {
 
- console.log(candidate);
+ console.log(`BASIC INFO: ${candidate.id}`);
 
   
   return ( 
@@ -16,7 +16,7 @@ export const BasicInfo = ({candidate}) => {
   <Row className="mt-4">
     <Col sm={12} md={12} lg={4}>
       <img
-        src="https://goodshepherdirvine.com/wp-content/uploads/2017/08/user-placeholder.jpg"
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOC9cG-RnDhS3DALFlKk13uBjUOYTQ6x0P1A&usqp=CAU"
         alt=""
       />
     </Col>
