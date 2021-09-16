@@ -13,11 +13,10 @@ import { getCandidates } from "../../Services/service";
 export const SingleCandidate = () => {
     const [candidates, setCandidates] = useState([]);
     
-  const params = useParams();
-  const candidateId = params.candidateId
+  // const params = useParams(); useParams returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>.
+  const candidateId = useParams().singleCandidateId  // /single-candidate/:singleCandidateId  key/value 
 
-
-
+  console.log(`candidate ${candidateId}`);
 
   useEffect(() => {
     getCandidates().then((candidates) => {
@@ -25,11 +24,13 @@ export const SingleCandidate = () => {
       setCandidates(candidates);
     });
   }, []);
+// Array.isArray(candidates)&&
 
-  const candidate  = Array.isArray(candidates)&&candidates.filter((element) => {
-      return element.id === parseInt(candidateId);
+  const candidate  = candidates.filter( (element) => {
+      return element.id === parseInt(candidateId);    // single-candidate/84815318  ----> 84815318
     })[0];
 
+    console.log(`OVO JE PROVERA: ${candidate}`)
 
   return (
     <Fragment>

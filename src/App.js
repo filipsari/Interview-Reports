@@ -19,7 +19,7 @@ function App() {
       <Header isLoggedIn={isLoggedIn} onLogout={setIsLoggedIn} />
       {isLoggedIn ? (
         <Switch>
-          <Route path="/single-candidate/:candidateId" component={SingleCandidate} />
+          <Route path="/single-candidate/:singleCandidateId" component={SingleCandidate} />
           <Route path="/" component={Candidates} />
         </Switch>
       ) : (
