@@ -14,4 +14,18 @@ export const getCandidates = () => {
   })
 } 
 
+const reportsEndPoint = "http://localhost:3333/api/reports"
 
+export const getReports = () => {
+  const token= localStorage.getItem('accessToken');
+  return fetch(reportsEndPoint, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+})
+.then ( (res)  => res.json())
+.then( (reports) =>{
+  console.log(reports);
+  return reports
+})
+}

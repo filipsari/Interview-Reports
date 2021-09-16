@@ -12,9 +12,10 @@ import { getCandidates } from "../../Services/service";
 
 export const SingleCandidate = () => {
     const [candidates, setCandidates] = useState([]);
-    
-  // const params = useParams(); useParams returns an object of key/value pairs of URL parameters. Use it to access match.params of the current <Route>.
-  const candidateId = useParams().singleCandidateId  // /single-candidate/:singleCandidateId  key/value 
+
+  const candidateId = useParams().candidateId
+
+
 
   console.log(`candidate ${candidateId}`);
 
@@ -34,8 +35,10 @@ export const SingleCandidate = () => {
 
   return (
     <Fragment>
+    
     { candidate ? <BasicInfo candidate={candidate}/> : null}  
-    <BasicTable/>
+    {candidate && <BasicTable candidate={candidate} /> }
+    
     </Fragment>    
   );
 };
