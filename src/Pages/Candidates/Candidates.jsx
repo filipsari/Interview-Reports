@@ -8,31 +8,27 @@ import "./Candidates.css";
 
 export const Candidates = () => {
   const [candidates, setCandidates] = useState([]);
+  const [filteredCandidates, setFilteredCandidates] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     getCandidates().then((candidates) => {
       console.log(candidates);
-      setCandidates(candidates);
+      setCandidates(candidates)
+      setFilteredCandidates(candidates)
     });
   }, []);
 
   const onTyping = (e) => {
     setInputValue(e.target.value);
-  };
+    const filtered = candidates.filter(element => element.name.toLowerCase().includes(e.target.value.toLowerCase()))
+     setFilteredCandidates(filtered)
+    };
+
+    
 
 
-  const onSubmit = () => {
-    const filteredCandidates = candidates.filter((element) => {
-      return element.name.toLowerCase().includes(inputValue.toLowerCase()); // 3 funcije 1) map svi elementi 2) filter suzeni broj elementata vraca true ili false  3) reduce- kombinaciju prve dve 
-    });
-    setCandidates(filteredCandidates);
-  };
 
-const onFormSubmit = (event) => {
-   event.preventDefault();
-   onSubmit();
-}
 
   // const filteredCandidates = candidates.filter((c) => c.name === query);
 
@@ -44,10 +40,11 @@ const onFormSubmit = (event) => {
       <nav className="navbar navbar-light bg-light navigate">
         <div className="container-fluid">
           <a href="#" class="navbar-brand" >Candidates</a>
-          <form onChange={onFormSubmit} className="d-flex">   
+          <form className="d-flex">   
             <input
               value={inputValue}
               onChange={onTyping}
+              
               className="form-control me-2"
               type="search"
               placeholder="Search"
@@ -66,9 +63,9 @@ const onFormSubmit = (event) => {
       </nav>
 
 
-
+  
       <div className="card-group">
-        {candidates.map((element, key) => (
+        {filteredCandidates.map((element, key) => (
           <div className="card ourCard" key={key} style={{ width: "18rem" }}>
             <Link to={`/single-candidate/${element.id}`}> 
               <img
