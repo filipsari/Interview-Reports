@@ -41,14 +41,14 @@ const onFormSubmit = (event) => {
     // This is Candidate search field *********************************************************
     // ***************************************************************************************** onSubimt */
     <div>
-      <nav class="navbar navbar-light bg-light navigate">
-        <div class="container-fluid">
+      <nav className="navbar navbar-light bg-light navigate">
+        <div className="container-fluid">
           <a href="#" class="navbar-brand" >Candidates</a>
-          <form onChange={onFormSubmit} class="d-flex">   
+          <form onChange={onFormSubmit} className="d-flex">   
             <input
               value={inputValue}
               onChange={onTyping}
-              class="form-control me-2"
+              className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
@@ -57,8 +57,8 @@ const onFormSubmit = (event) => {
               class="btn btn-outline-success"
               type="submit"> //automatski poziva submit button */}
             
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
+              <span className="input-group-text border-0" id="search-addon">
+                <i className="fas fa-search"></i>
               </span>
             {/* </button> */}
           </form>
