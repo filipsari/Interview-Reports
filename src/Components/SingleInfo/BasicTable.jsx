@@ -12,7 +12,7 @@ export const BasicTable = ({candidate}) => {
 
   useEffect(() =>{
     getReports().then((reports) =>{
-      setReports(reports.filter(singleReport => singleReport.candidateId === candidate.id))
+      setReports(reports.filter( element => element.candidateId === candidate.id))
     });
   }, []);
 
@@ -37,14 +37,14 @@ export const BasicTable = ({candidate}) => {
           </tr>
         </thead>
         <tbody>
-        {reports && reports.map((element, index) => (
+        {reports ? reports.map((element, index) => (
           <tr key={index}>
             <td>{element.companyName}</td>
             <td>{element.interviewDate}</td>
             <td>{element.status}</td>
             <td><i class="fas fa-eye"></i></td>
           </tr>
-        ))}
+        )) : null }
         </tbody>
       </Table>
       
