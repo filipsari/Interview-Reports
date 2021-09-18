@@ -37,7 +37,7 @@ export const SingleCandidate = () => {
     <Fragment>
     
     { candidate ? <BasicInfo candidate={candidate}/> : null}  
-    {candidate && <BasicTable candidate={candidate} /> }
+    { candidate ? <BasicTable candidate={candidate} /> :null}
     
     </Fragment>    
   );
