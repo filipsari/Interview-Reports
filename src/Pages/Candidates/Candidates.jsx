@@ -14,60 +14,43 @@ export const Candidates = () => {
   useEffect(() => {
     getCandidates().then((candidates) => {
       console.log(candidates);
-      setCandidates(candidates)
-      setFilteredCandidates(candidates)
+      setCandidates(candidates);
+      setFilteredCandidates(candidates);
     });
   }, []);
 
   const onTyping = (e) => {
     setInputValue(e.target.value);
-    const filtered = candidates.filter(element => element.name.toLowerCase().includes(e.target.value.toLowerCase()))
-     setFilteredCandidates(filtered)
-    };
-
-    
-
-
-
-
-  // const filteredCandidates = candidates.filter((c) => c.name === query);
+    const filtered = candidates.filter((element) =>
+      element.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredCandidates(filtered);
+  };
 
   return (
-    // ***************************************************************************************** */
-    // This is Candidate search field *********************************************************
-    // ***************************************************************************************** onSubimt */
     <div>
       <nav className="navbar navbar-light bg-light navigate">
         <div className="container-fluid">
-          <a href="#" class="navbar-brand" >Candidates</a>
-          <form className="d-flex">   
+          <a href="#" class="navbar-brand">
+            Candidates
+          </a>
+          <form className="d-flex">
             <input
               value={inputValue}
               onChange={onTyping}
-              
-              className="form-control me-2"
+              className="form-control me-2 fas"
               type="search"
-              placeholder="Search"
+              placeholder="&#xf002; Search"
               aria-label="Search"
             />
-            {/* <button
-              class="btn btn-outline-success"
-              type="submit"> //automatski poziva submit button */}
-            
-              <span className="input-group-text border-0" id="search-addon">
-                <i className="fas fa-search"></i>
-              </span>
-            {/* </button> */}
           </form>
         </div>
       </nav>
 
-
-  
       <div className="card-group">
         {filteredCandidates.map((element, key) => (
           <div className="card ourCard" key={key} style={{ width: "18rem" }}>
-            <Link to={`/single-candidate/${element.id}`}> 
+            <Link to={`/single-candidate/${element.id}`}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOC9cG-RnDhS3DALFlKk13uBjUOYTQ6x0P1A&usqp=CAU"
                 className="card-img-top"
