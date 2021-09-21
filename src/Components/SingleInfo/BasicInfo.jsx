@@ -12,7 +12,7 @@ export const BasicInfo = ({candidate}) => {
 
   
   return ( 
-  <Container>
+  <Container className='info'>
   <Row className="mt-4">
     <Col sm={12} md={12} lg={4}>
       <img

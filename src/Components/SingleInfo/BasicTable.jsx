@@ -5,6 +5,8 @@ import { getReports } from "../../Services/service";
 import { ModalReport } from "../Modals/ModalReport";
 import {getDate} from "../../Utilities/utilities.js";
 
+import './BasicTable.css';
+
 export const BasicTable = ({ candidate }) => {
   const [reports, setReports] = useState([]);
   const [reportToShow, setReportToShow] = useState(null);
@@ -18,14 +20,14 @@ export const BasicTable = ({ candidate }) => {
   }, [candidate.id]);
 
   return (
-    <Container>
+    <Container className='tab'>
       {!!reportToShow && (
         <ModalReport
           report={reportToShow}
           onHide={() => setReportToShow(null)}
         />
       )}
-      <h3 className="mt-4 mb-3">Reports:</h3>
+      <h2 className="mt-4 mb-3">Reports:</h2>
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -43,7 +45,7 @@ export const BasicTable = ({ candidate }) => {
                   <td>{element.status}</td>
                   <td className="text-center">
                     <button
-                      className="text-primary"
+                      className="btn btn-link-dark"
                       onClick={() => setReportToShow(element)}
                     >
                       <i className="fas fa-eye"></i>

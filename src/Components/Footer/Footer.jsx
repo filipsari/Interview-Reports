@@ -4,9 +4,9 @@ import "./Footer.css";
 function Footer() {
   return (
     <div className="footer">
-      <p>© 2021 - Site Built By Big 4</p>
+      <h4>© 2021 - Site Built By Big 4</h4>
     </div>
   );
 }
 
-export default Footer;
+export {Footer};
