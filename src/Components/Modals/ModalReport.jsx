@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Row, Modal, Col } from "react-bootstrap";
+import {getDate} from "../../Utilities/utilities.js";
 
 export const ModalReport = ({ report, onHide }) => {
   console.log("From Modal: ", report);
@@ -24,7 +25,7 @@ export const ModalReport = ({ report, onHide }) => {
               <p>Company</p>
               <p>{report.companyName}</p>
               <p>Interview Date</p>
-              <p>{report.interviewDate}</p>
+              <p>{getDate(report.interviewDate)}</p>
               <p>Phase</p>
               <p>{report.phase}</p>
               <p>Status</p>

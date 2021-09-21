@@ -8,69 +8,49 @@ import "./Candidates.css";
 
 export const Candidates = () => {
   const [candidates, setCandidates] = useState([]);
+  const [filteredCandidates, setFilteredCandidates] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   useEffect(() => {
     getCandidates().then((candidates) => {
       console.log(candidates);
       setCandidates(candidates);
+      setFilteredCandidates(candidates);
     });
   }, []);
 
   const onTyping = (e) => {
     setInputValue(e.target.value);
+    const filtered = candidates.filter((element) =>
+      element.name.toLowerCase().includes(e.target.value.toLowerCase())
+    );
+    setFilteredCandidates(filtered);
   };
-
-
-  const onSubmit = () => {
-    const filteredCandidates = candidates.filter((element) => {
-      return element.name.toLowerCase().includes(inputValue.toLowerCase()); // 3 funcije 1) map svi elementi 2) filter suzeni broj elementata vraca true ili false  3) reduce- kombinaciju prve dve 
-    });
-    setCandidates(filteredCandidates);
-  };
-
-const onFormSubmit = (event) => {
-   event.preventDefault();
-   onSubmit();
-}
-
-  // const filteredCandidates = candidates.filter((c) => c.name === query);
 
   return (
-    // ***************************************************************************************** */
-    // This is Candidate search field *********************************************************
-    // ***************************************************************************************** onSubimt */
     <div>
-      <nav class="navbar navbar-light bg-light navigate">
-        <div class="container-fluid">
-          <a href="#" class="navbar-brand" >Candidates</a>
-          <form onChange={onFormSubmit} class="d-flex">   
+      <nav className="navbar navbar-light bg-light navigate">
+        <div className="container">
+          <a href="#" class="navbar-brand">
+            Candidates
+          </a>
+          <form className="d-flex">
             <input
               value={inputValue}
               onChange={onTyping}
-              class="form-control me-2"
+              className="form-control me-2 fas"
               type="search"
-              placeholder="Search"
+              placeholder="&#xf002; Search"
               aria-label="Search"
             />
-            {/* <button
-              class="btn btn-outline-success"
-              type="submit"> //automatski poziva submit button */}
-            
-              <span class="input-group-text border-0" id="search-addon">
-                <i class="fas fa-search"></i>
-              </span>
-            {/* </button> */}
           </form>
         </div>
       </nav>
 
-
-
       <div className="card-group">
-        {candidates.map((element, key) => (
-          <div className="card ourCard" key={key} style={{ width: "18rem" }}>
-            <Link to={`/single-candidate/${element.id}`}> 
+        {filteredCandidates.map((element, key) => (
+          <div className="ourCard" key={key} style={{ width: "27rem" }}>
+            <Link to={`/single-candidate/${element.id}`}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOC9cG-RnDhS3DALFlKk13uBjUOYTQ6x0P1A&usqp=CAU"
                 className="card-img-top"

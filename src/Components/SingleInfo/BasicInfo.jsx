@@ -1,6 +1,6 @@
 import React  from "react";
 import {Container, Row, Col} from "react-bootstrap";
-
+import {getDate} from "../../Utilities/utilities.js";
 
 
 import "./BasicInfo.css";
@@ -12,7 +12,7 @@ export const BasicInfo = ({candidate}) => {
 
   
   return ( 
-  <Container>
+  <Container className='info'>
   <Row className="mt-4">
     <Col sm={12} md={12} lg={4}>
       <img
@@ -28,7 +28,7 @@ export const BasicInfo = ({candidate}) => {
         </Col>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Date of Birth:</h6>
-          <p className="fs-4">{candidate.birthday}</p>
+          <p className="fs-4">{getDate(candidate.birthday)}</p>
         </Col>
         <Col sm={12} md={12} lg={6} className="g-4">
           <h6>Email:</h6>

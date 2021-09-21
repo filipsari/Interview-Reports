@@ -1,15 +1,18 @@
-.ourCard{
- 
-  margin:  20px;
-  border: 2px solid red
+.ourCard {
+  width: 30%;
+  border: 2px solid rgb(155,202,255);
+  background-color: white;
+  margin: 0 auto;
+  margin-bottom: 5%;
 }
 
-.input{
+.input {
   width: 100%;
   display: block;
 }
 
-.navigate{
+.navigate {
   margin: 20px 40px 20px 40px;
-
 }
+
+

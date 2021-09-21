@@ -9,7 +9,7 @@ function Header({ isLoggedIn, onLogout }) {
     onLogout(false);
   };
   return (
-    <div className="mb-50">
+    <div>
       <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
           <span className="navbar-brand">Interview Report</span>

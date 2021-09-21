@@ -3,7 +3,7 @@ import { Route, Switch } from "react-router-dom";
 
 import { Login } from "./Pages/Login/Login";
 import { Header } from "./Components/Header/Header";
-import Footer from "./Components/Footer/Footer";
+import { Footer } from "./Components/Footer/Footer";
 import { SingleCandidate } from "./Pages/SingleCandidate/SingleCandidate";
 import { Candidates } from "./Pages/Candidates/Candidates";
 
