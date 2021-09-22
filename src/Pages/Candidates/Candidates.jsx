@@ -22,7 +22,7 @@ export const Candidates = () => {
   const onTyping = (e) => {
     setInputValue(e.target.value);
     const filtered = candidates.filter((element) =>
-      element.name.toLowerCase().includes(e.target.value.toLowerCase())
+      element.name.toLowerCase().includes(e.target.value.toLowerCase().trim())
     );
     setFilteredCandidates(filtered);
   };
@@ -31,9 +31,9 @@ export const Candidates = () => {
     <div>
       <nav className="navbar navbar-light bg-light navigate">
         <div className="container">
-          <a href="#" class="navbar-brand">
-            Candidates
-          </a>
+          <span className="navbar-brand cand">
+            Candidates:
+          </span>
           <form className="d-flex">
             <input
               value={inputValue}

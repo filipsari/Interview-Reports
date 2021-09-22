@@ -13,7 +13,7 @@ export const ModalReport = ({ report, onHide }) => {
       centered
       size="lg"
     >
-      <Modal.Header closeButton>
+      <Modal.Header closeButton className="btn btn-primary">
         <Modal.Title id="contained-modal-title-vcenter">
           {report.candidateName}
         </Modal.Title>
@@ -22,18 +22,18 @@ export const ModalReport = ({ report, onHide }) => {
         <Container>
           <Row>
             <Col xs={6} md={4}>
-              <p>Company</p>
+              <h6>Company</h6>
               <p>{report.companyName}</p>
-              <p>Interview Date</p>
+              <h6>Interview Date</h6>
               <p>{getDate(report.interviewDate)}</p>
-              <p>Phase</p>
+              <h6>Phase</h6>
               <p>{report.phase}</p>
-              <p>Status</p>
+              <h6>Status</h6>
               <p>{report.status}</p>
             </Col>
 
             <Col xs={12} md={8}>
-              <p>Notes</p>
+              <h6>Notes</h6>
               <p>{report.note}</p>
             </Col>
           </Row>
