@@ -3,10 +3,12 @@
   width: 100%;
   left: 0;
   bottom: 0;
-  color: white;
   text-align: center;
-  background-color: rgb(13,110,253);
-  padding: 0,5%;
+  background-color: rgb(35, 131, 247);
+  padding: 1rem;
+}
+
+h4 {
   font-size: 20px;
-  font-weight: bold;
+  color: lightgray;
 }

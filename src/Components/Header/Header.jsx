@@ -10,9 +10,9 @@ function Header({ isLoggedIn, onLogout }) {
   };
   return (
     <div>
-      <nav className="navbar navbar-dark bg-primary">
+      <nav className="navbar navbar-dark header">
         <div className="container-fluid">
-          <span className="navbar-brand">Interview Report</span>
+          <span className="navbar-brand int">Interview Report</span>
 
           {isLoggedIn && (
             
