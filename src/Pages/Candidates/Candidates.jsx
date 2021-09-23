@@ -31,8 +31,8 @@ export const Candidates = () => {
     <div>
       <nav className="navbar navbar-light bg-light navigate">
         <div className="container">
-          <span className="navbar-brand cand">
-            Candidates:
+          <span className="navbar-brand cand" style={{ color: "rgb(108, 137, 176)" }}>
+            Candidates
           </span>
           <form className="d-flex">
             <input
