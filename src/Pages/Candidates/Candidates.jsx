@@ -49,7 +49,7 @@ export const Candidates = () => {
 
       <div className="card-group">
         {filteredCandidates.map((element, key) => (
-          <div className="ourCard" key={key} style={{ width: "27rem" }}>
+          <div className="ourCard" key={key}>
             <Link to={`/single-candidate/${element.id}`}>
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOC9cG-RnDhS3DALFlKk13uBjUOYTQ6x0P1A&usqp=CAU"
