@@ -23,3 +23,11 @@
   font-weight: bold;
   letter-spacing: 2px;
 }
+
+
+@media only screen and (max-width: 767px){
+  .ourCard {
+    width: 90%;  
+  }
+}
+
