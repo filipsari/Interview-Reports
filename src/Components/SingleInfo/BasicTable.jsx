@@ -3,9 +3,9 @@ import { Table, Container } from "react-bootstrap";
 
 import { getReports } from "../../Services/service";
 import { ModalReport } from "../Modals/ModalReport";
-import {getDate} from "../../Utilities/utilities.js";
+import { getDate } from "../../Utilities/utilities.js";
 
-import './BasicTable.css';
+import "./BasicTable.css";
 
 export const BasicTable = ({ candidate }) => {
   const [reports, setReports] = useState([]);
@@ -20,7 +20,7 @@ export const BasicTable = ({ candidate }) => {
   }, [candidate.id]);
 
   return (
-    <Container className='tab'>
+    <Container className="tab">
       {!!reportToShow && (
         <ModalReport
           report={reportToShow}

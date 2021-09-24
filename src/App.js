@@ -1,4 +1,4 @@
-import React, { Fragment, useState} from "react";
+import React, { Fragment, useState } from "react";
 import { Route, Switch } from "react-router-dom";
 
 import { Login } from "./Pages/Login/Login";
@@ -19,17 +19,17 @@ function App() {
       <Header isLoggedIn={isLoggedIn} onLogout={setIsLoggedIn} />
       {isLoggedIn ? (
         <Switch>
-          <Route path="/single-candidate/:candidateId" component={SingleCandidate} />
+          <Route
+            path="/single-candidate/:candidateId"
+            component={SingleCandidate}
+          />
           <Route path="/" component={Candidates} />
         </Switch>
       ) : (
         <Login onLogin={setIsLoggedIn} />
       )}
-       
-
       <Footer />
     </Fragment>
   );
 }
-
 export default App;

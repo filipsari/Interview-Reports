@@ -1,11 +1,11 @@
 import React from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import "./Header.css";
 
 function Header({ isLoggedIn, onLogout }) {
   const onLogoutClick = () => {
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem("accessToken");
     onLogout(false);
   };
   return (
@@ -15,17 +15,16 @@ function Header({ isLoggedIn, onLogout }) {
           <span className="navbar-brand int">Interview Report</span>
 
           {isLoggedIn && (
-            
             <div className="d-flex">
-              <Link to="/" className="btn" >
+              <Link to="/" className="btn">
                 Candidates
-             </Link>
+              </Link>
 
-              <Link to='/' className="btn" onClick={onLogoutClick}>
+              <Link to="/" className="btn" onClick={onLogoutClick}>
                 <i className="fas fa-sign-in-alt"></i> Log Out
               </Link>
             </div>
-          ) }
+          )}
         </div>
       </nav>
     </div>

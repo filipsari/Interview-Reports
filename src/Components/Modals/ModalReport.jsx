@@ -1,10 +1,8 @@
 import React from "react";
 import { Container, Row, Modal, Col } from "react-bootstrap";
-import {getDate} from "../../Utilities/utilities.js";
+import { getDate } from "../../Utilities/utilities.js";
 
 export const ModalReport = ({ report, onHide }) => {
-  console.log("From Modal: ", report);
-
   return (
     <Modal
       show={!!report}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import './CandidateInfo.css';
+import "./CandidateInfo.css";
 
 export const CandidateInfo = ({ name, email }) => {
   return (

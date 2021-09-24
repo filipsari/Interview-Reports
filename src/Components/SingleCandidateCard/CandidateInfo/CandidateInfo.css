@@ -1,7 +1,8 @@
-h5, p {
-    color: black;
+h5,
+p {
+  color: black;
 }
 
 .card-text {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }

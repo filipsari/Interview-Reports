@@ -7,23 +7,17 @@ import { getCandidates } from "../../Services/service";
 export const SingleCandidate = () => {
   const [candidates, setCandidates] = useState([]);
 
-  const candidateId = useParams().candidateId; // objekat key:vaule
-
-  console.log(`candidate ${candidateId}`);
+  const candidateId = useParams().candidateId;
 
   useEffect(() => {
     getCandidates().then((candidates) => {
-      console.log(candidates);
       setCandidates(candidates);
     });
   }, []);
-  // Array.isArray(candidates)&&
 
   const candidate = candidates.filter((element) => {
-    return element.id === parseInt(candidateId); // single-candidate/84815318  ----> 84815318
+    return element.id === parseInt(candidateId);
   })[0];
-
-  console.log(`OVO JE PROVERA: ${candidate}`);
 
   return (
     <Fragment>
